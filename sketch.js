@@ -10,6 +10,8 @@ var engine, world
 var ground;
 var backgroundImg
 var tower,towerImg
+var cannon
+var angle =20
 
 
 function preload() {
@@ -36,6 +38,9 @@ function setup() {
   tower = Bodies.rectangle(160,350,160,310,options)
   World.add(world,tower)
 
+// criando canhao
+cannon = new Cannon(180,110,130,100,angle)
+
 
 }
 
@@ -54,6 +59,10 @@ function draw() {
   imageMode(CENTER)
   image(towerImg,tower.position.x,tower.position.y,160,310)
   pop()//volta para a configuração antiga
+
+  //exibindo o canhao na tela
+  cannon.display()
+
 
   text(mouseX+" / "+mouseY,mouseX,mouseY)
 }
