@@ -12,10 +12,20 @@ class Cannon{
 
 
     display(){
-       //cano do canhao
+       console.log(this.angle)
+       if(keyIsDown(RIGHT_ARROW)&& this.angle <60){
+        this.angle +=1
+        
+       }
+       if(keyIsDown(LEFT_ARROW)&& this.angle >-37){
+           this.angle -=1
+       }
+        //cano do canhao
         push ()
+        translate (this.x,this.y)
+        rotate (this.angle)
         imageMode(CENTER)
-        image(this.cannonimg,this.x,this.y,this.w,this.h) 
+        image(this.cannonimg,0,0,this.w,this.h) 
         pop ()
        // base do canhao
        

@@ -25,6 +25,8 @@ function setup() {
 
   engine = Engine.create();
   world = engine.world;
+  angleMode(DEGREES)
+  angle = 15
 
   //options dos corpos
   var options = {
@@ -72,4 +74,9 @@ function draw() {
 
 
   text(mouseX + " / " + mouseY, mouseX, mouseY)
+}
+function keyReleased(){
+  if(keyCode==DOWN_ARROW){
+    cannonball.shoot()
+  }
 }
